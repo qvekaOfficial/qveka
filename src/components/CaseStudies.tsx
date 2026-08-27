@@ -92,7 +92,7 @@ const caseStudies = [
 
 export default function CaseStudies() {
   return (
-    <section id="work" className="py-24 md:py-32 bg-white px-6">
+    <section id="case-studies" className="py-24 md:py-32 bg-white px-6">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div

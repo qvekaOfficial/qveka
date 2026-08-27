@@ -5,10 +5,10 @@ import { Menu, X, ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { label: "About Us", href: "#about" },
-  { label: "Our Approach", href: "#approach" },
-  { label: "Our Services", href: "#services" },
-  { label: "Work Showcase", href: "#work" },
+  { label: "WORK", href: "#work" },
+  { label: "SERVICES", href: "#services" },
+  { label: "CASE STUDIES", href: "#case-studies" },
+  { label: "ABOUT", href: "#about" },
 ];
 
 export default function Navbar() {
@@ -26,6 +26,21 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+    };
+  }, [isMobileMenuOpen]);
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
@@ -46,7 +61,7 @@ export default function Navbar() {
     <nav
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-        isScrolled
+        isScrolled || isMobileMenuOpen
           ? "bg-white/80 backdrop-blur-md border-b border-border py-4"
           : "bg-transparent py-6"
       )}
@@ -81,7 +96,7 @@ export default function Navbar() {
             onClick={(e) => handleLinkClick(e, "#contact")}
             className="group inline-flex items-center gap-1.5 bg-foreground text-background px-5 py-2.5 rounded-full text-xs font-mono font-medium hover:bg-foreground/90 transition-all duration-300"
           >
-            Start Campaign
+            GET IN TOUCH
             <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
         </div>
@@ -103,7 +118,7 @@ export default function Navbar() {
       {/* Mobile Menu Overlay */}
       <div
         className={cn(
-          "md:hidden fixed inset-0 top-[73px] bg-white z-40 transition-transform duration-500 ease-in-out border-t border-border flex flex-col justify-between py-12 px-6",
+          "md:hidden fixed inset-0 top-[73px] bg-white h-[95vh] z-40 transition-transform duration-500 ease-in-out border-t border-border flex flex-col justify-between py-12 px-6",
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
@@ -129,7 +144,7 @@ export default function Navbar() {
             onClick={(e) => handleLinkClick(e, "#contact")}
             className="group flex items-center justify-center gap-2 bg-foreground text-background px-6 py-4 rounded-full text-sm font-mono font-medium hover:bg-foreground/90 transition-colors border border-transparent text-center"
           >
-            Start Campaign
+            GET IN TOUCH
             <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
           <div className="text-center font-mono text-xs text-foreground/45">
