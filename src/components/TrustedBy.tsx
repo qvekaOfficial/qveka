@@ -1,5 +1,7 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 const logos = [
   "https://framerusercontent.com/images/sOvFV9n2zKVAA9VNV7us8DDYuHk.png",
   "https://framerusercontent.com/images/Fmc5Fnp5nSpkl0yZGTS8MJD7Ugw.png",
@@ -20,16 +22,26 @@ export default function TrustedBy() {
         {/* Speciality Block */}
         <div className="mb-16 md:mb-20 max-w-4xl">
           {/* Blue decorative line */}
-          <div className="w-12 h-[2px] bg-blue-600 mb-6 rounded-full" />
+          <motion.div
+            initial={{ opacity: 0, width: 0 }}
+            whileInView={{ opacity: 1, width: 48 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+            className="h-0.5 bg-blue-600 rounded-full mb-8"
+          />
 
           <div className="font-mono text-xs md:text-sm text-foreground/40 mb-3 tracking-wide">
             Our Speciality
           </div>
           <h2 className="font-syne text-3xl md:text-5xl lg:text-6xl font-bold text-foreground leading-[1.1] mb-7">
-            <span className="text-blue-600">Product-Led</span> Marketing for AI SaaS
+            <span className="text-blue-600">Product-Led</span> Marketing for AI
+            SaaS
           </h2>
           <p className="font-sans text-base md:text-xl text-foreground/60 leading-relaxed max-w-3xl">
-            Since the release of ChatGPT in late 2022, we were the first to sponsor a creator on X. Today, we&apos;ve helped category leaders and SaaS brands connect with influencers that drive conversions and awareness to their products and services.
+            Since the release of ChatGPT in late 2022, we were the first to
+            sponsor a creator on X. Today, we&apos;ve helped category leaders
+            and SaaS brands connect with influencers that drive conversions and
+            awareness to their products and services.
           </p>
         </div>
 
@@ -41,8 +53,12 @@ export default function TrustedBy() {
 
           <style jsx global>{`
             @keyframes marquee-scroll {
-              0%   { transform: translateX(0); }
-              100% { transform: translateX(-50%); }
+              0% {
+                transform: translateX(0);
+              }
+              100% {
+                transform: translateX(-50%);
+              }
             }
             .logo-marquee {
               animation: marquee-scroll 30s linear infinite;

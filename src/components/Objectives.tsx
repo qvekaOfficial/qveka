@@ -41,7 +41,7 @@ export default function Objectives() {
           <motion.div
             initial={{ opacity: 0, width: 0 }}
             whileInView={{ opacity: 1, width: 48 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 1 }}
             viewport={{ once: true }}
             className="h-0.5 bg-blue-600 rounded-full mb-8"
           />
