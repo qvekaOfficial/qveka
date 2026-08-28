@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import VideoMarquee from "@/components/VideoMarquee";
 import StatsBanner from "@/components/StatsBanner";
 import TrustedBy from "@/components/TrustedBy";
+import Objectives from "@/components/Objectives";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import Work from "@/components/Work";
@@ -18,6 +19,7 @@ export default function Home() {
       <VideoMarquee />
       <StatsBanner />
       <TrustedBy />
+      <Objectives />
       <About />
       <Services />
       <Work />
