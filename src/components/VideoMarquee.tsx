@@ -13,7 +13,14 @@ const videos = [
 
 export default function VideoMarquee() {
   // Double the videos for seamless loop
-  const loopVideos = [...videos, ...videos];
+  const loopVideos = [
+    ...videos,
+    ...videos,
+    ...videos,
+    ...videos,
+    ...videos,
+    ...videos,
+  ];
 
   return (
     <>
@@ -31,7 +38,9 @@ export default function VideoMarquee() {
         }
       `}</style>
 
-      <section className="relative w-full overflow-hidden bg-white py-5"> {/* py-12 md:py-16 */}
+      <section className="relative w-full overflow-hidden bg-white py-5">
+        {" "}
+        {/* py-12 md:py-16 */}
         <div className="relative overflow-hidden">
           <div className="flex gap-4 md:gap-6 marquee-track will-change-transform">
             {loopVideos.map((video, index) => (
