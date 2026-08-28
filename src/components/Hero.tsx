@@ -24,8 +24,8 @@ export default function Hero() {
     >
       {/* Background decorative elements */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute top-40 left-10 w-72 h-72 bg-accent-primary/5 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-40 right-10 w-96 h-96 bg-accent-secondary/5 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }} />
+        <div className="absolute top-40 left-10 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl animate-float" />
+        <div className="absolute bottom-40 right-10 w-96 h-96 bg-red-500/5 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }} />
       </div>
 
       <div className="max-w-6xl mx-auto text-center relative z-10">
@@ -36,7 +36,7 @@ export default function Hero() {
           transition={{ duration: 0.6 }}
           className="inline-flex items-center gap-2 bg-foreground/5 border border-foreground/10 rounded-full px-4 py-2 mb-8"
         >
-          <Sparkles className="h-4 w-4 text-accent-primary" />
+          <Sparkles className="h-4 w-4 text-blue-600" />
           <span className="font-mono text-xs font-medium text-foreground/80">
             Independent Agency for Modern Brands
           </span>
@@ -49,9 +49,9 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="font-syne text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-foreground leading-[1.1] mb-6"
         >
-          We Build Brands
+          Creators that turn attention into
           <br />
-          <span className="text-accent-primary">That Matter</span>
+          <span className="text-blue-600">real results</span>
         </motion.h1>
 
         {/* Subheadline */}
@@ -61,8 +61,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="font-sans text-lg md:text-xl lg:text-2xl text-foreground/70 max-w-3xl mx-auto leading-relaxed mb-12"
         >
-          From social campaigns to full-scale software development, we're your
-          strategic partner for promotion, design, and digital transformation.
+          We connect AI SaaS brands with creators whose audiences already trust them, so you get real pipeline instead of just impressions.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -76,36 +75,18 @@ export default function Hero() {
             onClick={() => handleScroll("#contact")}
             className="group inline-flex items-center gap-2 bg-foreground text-background px-8 py-4 rounded-full font-sans font-medium hover:bg-foreground/90 transition-all duration-300 shadow-lg hover:shadow-xl"
           >
-            Let's Create Together
+            Get In Touch
             <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
           </button>
           <button
-            onClick={() => handleScroll("#work")}
+            onClick={() => handleScroll("#services")}
             className="group inline-flex items-center gap-2 bg-transparent text-foreground border-2 border-foreground/20 px-8 py-4 rounded-full font-sans font-medium hover:border-foreground/40 hover:bg-foreground/5 transition-all duration-300"
           >
-            View Our Work
+            Our Services
             <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
           </button>
         </motion.div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
-        >
-          <span className="font-mono text-xs text-foreground/50 uppercase tracking-wider">
-            Scroll to explore
-          </span>
-          <div className="w-6 h-10 border-2 border-foreground/20 rounded-full flex items-start justify-center p-2">
-            <motion.div
-              animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-              className="w-1.5 h-1.5 bg-foreground/40 rounded-full"
-            />
-          </div>
-        </motion.div>
       </div>
     </section>
   );
