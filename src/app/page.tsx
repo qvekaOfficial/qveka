@@ -5,6 +5,7 @@ import StatsBanner from "@/components/StatsBanner";
 import TrustedBy from "@/components/TrustedBy";
 import Objectives from "@/components/Objectives";
 import OurServices from "@/components/OurServices";
+import HowItWorks from "@/components/HowItWorks";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -18,6 +19,7 @@ export default function Home() {
       <TrustedBy />
       <Objectives />
       <OurServices />
+      <HowItWorks />
       <Contact />
       <Footer />
     </main>
