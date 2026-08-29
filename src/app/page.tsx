@@ -4,10 +4,7 @@ import VideoMarquee from "@/components/VideoMarquee";
 import StatsBanner from "@/components/StatsBanner";
 import TrustedBy from "@/components/TrustedBy";
 import Objectives from "@/components/Objectives";
-import About from "@/components/About";
-import Services from "@/components/Services";
-import Work from "@/components/Work";
-import CaseStudies from "@/components/CaseStudies";
+import OurServices from "@/components/OurServices";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -20,10 +17,7 @@ export default function Home() {
       <StatsBanner />
       <TrustedBy />
       <Objectives />
-      <About />
-      <Services />
-      <Work />
-      <CaseStudies />
+      <OurServices />
       <Contact />
       <Footer />
     </main>

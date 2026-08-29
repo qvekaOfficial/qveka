@@ -13,14 +13,7 @@ const videos = [
 
 export default function VideoMarquee() {
   // Double the videos for seamless loop
-  const loopVideos = [
-    ...videos,
-    ...videos,
-    ...videos,
-    ...videos,
-    ...videos,
-    ...videos,
-  ];
+  const loopVideos = [...videos, ...videos];
 
   return (
     <>
