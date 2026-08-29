@@ -50,8 +50,7 @@ export default function Objectives() {
             Our Objectives
           </div>
           <h2 className="font-syne text-3xl md:text-5xl lg:text-6xl font-bold text-foreground leading-[1.1] mb-7">
-            We don&apos;t just execute campaigns we
-            <br />
+            We don&apos;t just execute campaigns we{" "}
             <span className="text-blue-600">engineer influence</span>
           </h2>
           <p className="font-sans text-base md:text-xl text-foreground/50 leading-relaxed max-w-3xl mb-2">
