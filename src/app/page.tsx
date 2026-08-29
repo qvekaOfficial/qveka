@@ -6,6 +6,7 @@ import TrustedBy from "@/components/TrustedBy";
 import Objectives from "@/components/Objectives";
 import OurServices from "@/components/OurServices";
 import HowItWorks from "@/components/HowItWorks";
+import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -20,6 +21,7 @@ export default function Home() {
       <Objectives />
       <OurServices />
       <HowItWorks />
+      <Testimonials />
       <Contact />
       <Footer />
     </main>
