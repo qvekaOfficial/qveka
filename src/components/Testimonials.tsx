@@ -34,9 +34,9 @@ const testimonials = [
 
 function TestimonialCard({ t }: { t: (typeof testimonials)[number] }) {
   return (
-    <article className="group relative flex h-[440px] w-[420px] shrink-0 flex-col overflow-hidden rounded-3xl border border-foreground/10 bg-white shadow-[0_10px_40px_-15px_rgba(30,58,138,0.25)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_25px_60px_-15px_rgba(220,38,38,0.35)] md:h-[480px] md:w-[460px]">
+    <article className="group relative flex h-[460px] w-[280px] shrink-0 flex-col overflow-hidden rounded-3xl border border-foreground/10 bg-white shadow-[0_10px_40px_-15px_rgba(30,58,138,0.25)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_25px_60px_-15px_rgba(220,38,38,0.35)] md:h-[520px] md:w-[420px] lg:h-[560px] lg:w-[460px]">
       {/* Image */}
-      <div className="relative h-56 overflow-hidden md:h-64">
+      <div className="relative h-48 shrink-0 overflow-hidden sm:h-52 md:h-56 lg:h-64">
         <img
           src={t.image}
           alt={t.name}
@@ -56,7 +56,7 @@ function TestimonialCard({ t }: { t: (typeof testimonials)[number] }) {
           {t.name}
         </h3>
 
-        <p className="mb-5 line-clamp-4 flex-1 font-sans text-sm leading-relaxed text-foreground/70 md:text-base">
+        <p className="mb-5 line-clamp-3 flex-1 font-sans text-sm leading-relaxed text-foreground/70 md:text-base">
           {t.quote}
         </p>
 
