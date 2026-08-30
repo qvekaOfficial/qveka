@@ -78,7 +78,7 @@ export default function Testimonials() {
   const track = [...testimonials, ...testimonials];
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-blue-50/30 to-white py-16 md:py-24">
+    <section id="testimonials" className="relative overflow-hidden bg-gradient-to-b from-blue-50/30 to-white py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         {/* Header */}
         <div className="mb-12 md:mb-16 max-w-4xl">

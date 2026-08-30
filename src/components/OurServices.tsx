@@ -51,7 +51,7 @@ const services = [
 
 export default function OurServices() {
   return (
-    <section className="bg-linear-to-b from-white to-blue-50/30 overflow-hidden">
+    <section id="services" className="bg-linear-to-b from-white to-blue-50/30 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-10 pt-16 md:pt-20 pb-4">
         {/* Header - same style as Objectives for consistency */}
         <div className="mb-8 md:mb-10 max-w-4xl">

@@ -6,7 +6,7 @@ import { ArrowUpRight } from "lucide-react";
 export default function FounderStory() {
   return (
     <section
-      id="founder"
+      id="about"
       className="relative overflow-hidden bg-gradient-to-b from-white to-muted/60"
     >
       {/* Subtle decorative faint letter */}
