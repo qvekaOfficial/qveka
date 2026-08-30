@@ -6,7 +6,7 @@ const testimonials = [
   {
     name: "Beatrice Vladut",
     quote:
-      "I'll always choose to work with OMANE Media. They're genuinely one of the most lovely and easy to work with people, and that matters a whole lot.",
+      "I'll always choose to work with Qveka. They're genuinely one of the most lovely and easy to work with people, and that matters a whole lot.",
     handle: "@tribhuvan-kumar",
     followers: "60K+ followers on Linkedin",
     image:
@@ -24,7 +24,7 @@ const testimonials = [
   {
     name: "Chubby",
     quote:
-      "I work with many agencies on sponsorships, but OMANE Media consistently delivers the smoothest collaboration and execution.",
+      "I work with many agencies on sponsorships, but Qveka consistently delivers the smoothest collaboration and execution.",
     handle: "@tribhuvan-kumar",
     followers: "100K+ followers on X",
     image:

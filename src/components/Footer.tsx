@@ -50,7 +50,7 @@ export default function Footer() {
 
             {/* Copyright */}
             <p className="font-mono text-[11px] md:text-xs uppercase tracking-[0.2em] text-background/30 whitespace-nowrap shrink-0">
-              © 2026 Qveka. ALL RIGHTS RESERVED.
+              © {new Date().getFullYear()} Qveka. ALL RIGHTS RESERVED.
             </p>
 
             {/* Social links */}

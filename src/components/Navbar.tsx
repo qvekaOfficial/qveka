@@ -148,7 +148,7 @@ export default function Navbar() {
             <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
           <div className="text-center font-mono text-xs text-foreground/45">
-            © 2026 Qveka. All rights reserved.
+            © {new Date().getFullYear()} Qveka. All rights reserved.
           </div>
         </div>
       </div>

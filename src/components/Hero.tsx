@@ -38,7 +38,7 @@ export default function Hero() {
         >
           <Sparkles className="h-4 w-4 text-blue-600" />
           <span className="font-mono text-xs font-medium text-foreground/80">
-            Independent Agency for Modern Brands
+            Just another agency with a cool logo
           </span>
         </motion.div>
 
