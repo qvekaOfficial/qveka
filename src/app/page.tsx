@@ -4,6 +4,7 @@ import VideoMarquee from "@/components/VideoMarquee";
 import StatsBanner from "@/components/StatsBanner";
 import TrustedBy from "@/components/TrustedBy";
 import Objectives from "@/components/Objectives";
+import FounderStory from "@/components/FounderStory";
 import OurServices from "@/components/OurServices";
 import HowItWorks from "@/components/HowItWorks";
 import Testimonials from "@/components/Testimonials";
@@ -20,6 +21,7 @@ export default function Home() {
       <StatsBanner />
       <TrustedBy />
       <Objectives />
+      <FounderStory />
       <OurServices />
       <HowItWorks />
       <Testimonials />
