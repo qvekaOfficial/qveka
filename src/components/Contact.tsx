@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Check, Sparkles } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -15,7 +15,9 @@ export default function Contact() {
   const [errors, setErrors] = useState<Record<string, boolean>>({});
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [shake, setShake] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  // Honeypot: hidden from people, filled in by bots.
+  const [website, setWebsite] = useState("");
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -44,14 +46,30 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!validate()) {
-      setShake(true);
-      setTimeout(() => setShake(false), 600);
-      return;
-    }
+    setSubmitError(null);
+    if (!validate()) return;
+
     setIsLoading(true);
-    console.log("Form submitted:", formData);
-    setTimeout(() => {
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...formData, website }),
+      });
+
+      if (!response.ok) {
+        const body = await response.json().catch(() => ({}));
+        setSubmitError(
+          response.status === 429
+            ? "Too many submissions. Please try again in a few minutes."
+            : (body.error ??
+                "Something went wrong. Please try again, or email us directly."),
+        );
+        setIsLoading(false);
+        return;
+      }
+
       setIsLoading(false);
       setIsSubmitted(true);
       setFormData({
@@ -63,7 +81,12 @@ export default function Contact() {
       });
       setErrors({});
       setTimeout(() => setIsSubmitted(false), 4000);
-    }, 800);
+    } catch {
+      setIsLoading(false);
+      setSubmitError(
+        "Could not reach the server. Check your connection and try again.",
+      );
+    }
   };
 
   const waveUp = (i: number) => ({
@@ -287,6 +310,33 @@ export default function Contact() {
                     </span>
                   )}
                 </motion.div>
+
+                {/* Honeypot — off-screen rather than display:none, which some
+                    bots skip. Never shown to, or focusable by, real visitors. */}
+                <div
+                  aria-hidden="true"
+                  className="absolute left-[-9999px] top-0 w-px h-px overflow-hidden"
+                >
+                  <label htmlFor="website">Leave this field empty</label>
+                  <input
+                    id="website"
+                    name="website"
+                    type="text"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={website}
+                    onChange={(e) => setWebsite(e.target.value)}
+                  />
+                </div>
+
+                {submitError && (
+                  <p
+                    role="alert"
+                    className="mb-4 rounded-xl border border-red-500/20 bg-red-50 px-4 py-3 text-red-600 text-xs font-mono"
+                  >
+                    {submitError}
+                  </p>
+                )}
 
                 {/* Submit */}
                 <motion.div {...waveUp(5)}>

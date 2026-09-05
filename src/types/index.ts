@@ -35,14 +35,6 @@ export interface TeamMember {
   image: string;
 }
 
-export interface ContactFormData {
-  name: string;
-  email: string;
-  company: string;
-  service: string;
-  message: string;
-}
-
 export interface NavLink {
   label: string;
   href: string;
