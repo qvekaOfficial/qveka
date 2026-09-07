@@ -2,12 +2,19 @@
 
 import { motion } from "framer-motion";
 
+// khusboo dont want these images to be used in the trusted by section, so commenting them out for now
+// "https://framerusercontent.com/images/sOvFV9n2zKVAA9VNV7us8DDYuHk.png",
+// "https://framerusercontent.com/images/DCAckiFnouuErEjA4ZLmaaKXamo.jpeg",
 const logos = [
-  "https://framerusercontent.com/images/sOvFV9n2zKVAA9VNV7us8DDYuHk.png",
+  "/leaders_logo_apodex.jpeg",
+  "/leaders_logo_luma_ai.jpeg",
+  "/leaders_logo_outbox_lab.jpeg",
+  "/leaders_logo_omneky.jpeg",
+  "/leaders_logo_gamma.jpeg",
+  "/leaders_logo_deepseek.jpeg",
   "https://framerusercontent.com/images/Fmc5Fnp5nSpkl0yZGTS8MJD7Ugw.png",
   "https://framerusercontent.com/images/9u4tniv1LQHOhcOJDRLegGiFZ48.jpg",
   "https://framerusercontent.com/images/MGItyAxn4s2MsEyzc4aKCObtauI.png",
-  "https://framerusercontent.com/images/DCAckiFnouuErEjA4ZLmaaKXamo.jpeg",
   "https://framerusercontent.com/images/UpW5YLUQlGoa3rIFn16gROvh5J8.png",
   "https://framerusercontent.com/images/neGqynuVHsCT7aOep5bQIoUMQ.jpeg",
   "https://framerusercontent.com/images/mp8wDjNwy1mC3dL0QGk9JzuGsE.png",

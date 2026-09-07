@@ -15,7 +15,7 @@ const services = [
       "CREATOR-LED GROWTH",
       "INFLUENCER ROI TRACKING",
     ],
-    image: "https://framerusercontent.com/images/DhTHrieszEjpbeEGebF6zUrGI.jpg",
+    image: "/services_1_Complete_A_Z_influencer_marketing.jpeg",
   },
   {
     num: "02",
@@ -30,7 +30,7 @@ const services = [
       "GO-TO-MARKET SOCIAL",
     ],
     image:
-      "https://framerusercontent.com/images/wdnvZ7avrOagYaIS5zJdww9osoQ.jpg",
+      "/services_2_Launches_on_X_and_LinkedIn.jpeg",
   },
   {
     num: "03",
@@ -45,7 +45,7 @@ const services = [
       "B2B CREATOR MATCHING",
     ],
     image:
-      "https://framerusercontent.com/images/SACKxUxbEz6ZOXKyPUplaLaDjcg.jpg",
+      "/services_3_Curated_creator_talent_headhunting.jpeg",
   },
 ];
 
