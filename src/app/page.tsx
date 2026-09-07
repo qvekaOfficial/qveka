@@ -17,7 +17,7 @@ export default function Home() {
     <main className="min-h-screen flex flex-col">
       <Navbar />
       <Hero />
-      <VideoMarquee />
+      {/* <VideoMarquee /> */}
       <StatsBanner />
       <TrustedBy />
       <Objectives />
