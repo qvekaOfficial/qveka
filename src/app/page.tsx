@@ -24,7 +24,7 @@ export default function Home() {
       <FounderStory />
       <OurServices />
       <HowItWorks />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <FAQ />
       <Contact />
       <Footer />
