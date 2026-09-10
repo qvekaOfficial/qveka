@@ -30,7 +30,7 @@ export default function Hero() {
 
       <div className="max-w-6xl mx-auto text-center relative z-10">
         {/* Badge */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -40,7 +40,7 @@ export default function Hero() {
           <span className="font-mono text-xs font-medium text-foreground/80">
             Just another agency with a cool logo
           </span>
-        </motion.div>
+        </motion.div> */}
 
         {/* Main Headline */}
         <motion.h1
