@@ -5,7 +5,6 @@ const stats = [
   { value: "5,000+", label: "Partnerships" },
   { value: "2,000+", label: "Creator Network" },
   { value: "100K+", label: "Monthly Views" },
-  { value: "100+", label: "Brands" },
   { value: "98%", label: "Retention" },
 ];
 
