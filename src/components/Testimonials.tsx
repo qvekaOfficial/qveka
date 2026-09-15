@@ -4,39 +4,51 @@ import { motion } from "framer-motion";
 
 const testimonials = [
   {
-    name: "Beatrice Vladut",
+    name: "Alex Moore",
     quote:
-      "I'll always choose to work with Qveka. They're genuinely one of the most lovely and easy to work with people, and that matters a whole lot.",
-    handle: "@tribhuvan-kumar",
-    followers: "60K+ followers on Linkedin",
+      "Made by Tribhuvan, linkedin: https://www.linkedin.com/in/tribhuvan-kumar/",
+    handle: "@heyalexmoore",
+    followers: "185K+ followers on X",
     image:
-      "https://framerusercontent.com/images/nsjZAifv0lv7c9KIUe7zY8YcuMQ.jpg",
+      "https://pbs.twimg.com/profile_images/2002782930415026177/AQXbO75J_400x400.jpg",
   },
   {
-    name: "Chase Dimond",
+    name: "Harish kumar",
     quote:
-      "Best in the game. Always a pleasure working with Ori and his team on influencer marketing campaigns.",
-    handle: "@tribhuvan-kumar",
-    followers: "447k followers on Linkedin",
+      "Made by Tribhuvan, linkedin: https://www.linkedin.com/in/tribhuvan-kumar/",
+    handle: "@harishkumar-sh",
+    followers: "625K+ followers on Linkedin",
     image:
-      "https://framerusercontent.com/images/NzivDLcVaZYDPOYVxq20UrIqcjI.jpeg",
+      "https://media.licdn.com/dms/image/v2/D5603AQEoh5QMuZwhYA/profile-displayphoto-crop_800_800/B56Z.LC37aGcAI-/0/1784744216295?e=1790812800&v=beta&t=_aIDcmiTPd9orONSOj69DfM9Lv7LTRUz00dKlTYkrSY",
   },
   {
-    name: "Chubby",
+    name: "Victoria Blake",
     quote:
-      "I work with many agencies on sponsorships, but Qveka consistently delivers the smoothest collaboration and execution.",
-    handle: "@tribhuvan-kumar",
-    followers: "100K+ followers on X",
+      "Made by Tribhuvan, linkedin: https://www.linkedin.com/in/tribhuvan-kumar/",
+    handle: "@VictoriaBlddd",
+    followers: "37K+ followers on X",
     image:
-      "https://framerusercontent.com/images/w6gMy9X8yLmvhJIWa9hugQgHIg.jpg",
+      "https://pbs.twimg.com/profile_images/2060717043109036032/p0o1woou_400x400.jpg",
+  },
+  {
+    name: "Arfa Farheen",
+    quote:
+      "Made by Tribhuvan, linkedin: https://www.linkedin.com/in/tribhuvan-kumar/",
+    handle: "@arfa-farheen",
+    followers: "61K+ followers on Linkedin",
+    image:
+      "https://media.licdn.com/dms/image/v2/D4D03AQHtxi2_fm__tg/profile-displayphoto-scale_200_200/B4DZ5U107lHoAc-/0/1779539860633?e=1790812800&v=beta&t=GkjCkgwOtd0gzPSc-b6PG-3-Ct6j1x4H43yffaIW1og",
   },
 ];
 
+{
+  /* <article className="group relative flex h-[460px] w-[280px] shrink-0 flex-col overflow-hidden rounded-3xl border border-foreground/10 bg-white shadow-[0_10px_40px_-15px_rgba(30,58,138,0.25)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_25px_60px_-15px_rgba(220,38,38,0.35)] md:h-[520px] md:w-[420px] lg:h-[560px] lg:w-[460px]"></article> */
+}
 function TestimonialCard({ t }: { t: (typeof testimonials)[number] }) {
   return (
-    <article className="group relative flex h-[460px] w-[280px] shrink-0 flex-col overflow-hidden rounded-3xl border border-foreground/10 bg-white shadow-[0_10px_40px_-15px_rgba(30,58,138,0.25)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_25px_60px_-15px_rgba(220,38,38,0.35)] md:h-[520px] md:w-[420px] lg:h-[560px] lg:w-[460px]">
+    <article className="group relative flex w-[280px] shrink-0 flex-col overflow-hidden rounded-3xl border border-foreground/10 bg-white shadow-[0_10px_40px_-15px_rgba(30,58,138,0.25)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_25px_60px_-15px_rgba(220,38,38,0.35)] md:w-[420px] lg:w-[460px]">
       {/* Image */}
-      <div className="relative h-48 shrink-0 overflow-hidden sm:h-52 md:h-56 lg:h-64">
+      <div className="relative h-64 shrink-0 overflow-hidden md:h-82 lg:h-96">
         <img
           src={t.image}
           alt={t.name}
@@ -48,7 +60,7 @@ function TestimonialCard({ t }: { t: (typeof testimonials)[number] }) {
       {/* Body */}
       <div className="flex flex-1 flex-col p-6 md:p-7">
         {/* Decorative quote mark */}
-        <div className="mb-2 font-syne text-4xl leading-none text-blue-600/30 md:text-5xl">
+        <div className="mb-2 hidden font-syne text-4xl leading-none text-blue-600/30 md:text-5xl">
           &ldquo;
         </div>
 
@@ -56,7 +68,7 @@ function TestimonialCard({ t }: { t: (typeof testimonials)[number] }) {
           {t.name}
         </h3>
 
-        <p className="mb-5 line-clamp-3 flex-1 font-sans text-sm leading-relaxed text-foreground/70 md:text-base">
+        <p className="mb-5 line-clamp-3 hidden flex-1 font-sans text-sm leading-relaxed text-foreground/70 md:text-base">
           {t.quote}
         </p>
 
@@ -78,7 +90,10 @@ export default function Testimonials() {
   const track = [...testimonials, ...testimonials];
 
   return (
-    <section id="testimonials" className="relative overflow-hidden bg-gradient-to-b from-blue-50/30 to-white py-16 md:py-24">
+    <section
+      id="testimonials"
+      className="relative overflow-hidden bg-gradient-to-b from-blue-50/30 to-white py-16 md:py-24"
+    >
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         {/* Header */}
         <div className="mb-12 md:mb-16 max-w-4xl">

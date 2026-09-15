@@ -56,7 +56,7 @@ export default function Footer() {
             {/* Social links */}
             <div className="flex items-center gap-6 xl:gap-8 shrink-0">
               <a
-                href="https://www.linkedin.com/in/tribhuvan-kumar/"
+                href="https://www.linkedin.com/company/qveka-media/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="font-syne text-sm md:text-base font-semibold text-background/60 hover:text-blue-400 transition-colors tracking-tight"

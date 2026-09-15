@@ -21,7 +21,7 @@ export default function Home() {
       <StatsBanner />
       <TrustedBy />
       <Objectives />
-      <FounderStory />
+      {/* <FounderStory /> */}
       <OurServices />
       <HowItWorks />
       {/* <Testimonials /> */}

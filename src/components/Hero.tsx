@@ -25,7 +25,10 @@ export default function Hero() {
       {/* Background decorative elements */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-40 left-10 w-72 h-72 bg-blue-500/5 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-40 right-10 w-96 h-96 bg-red-500/5 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }} />
+        <div
+          className="absolute bottom-40 right-10 w-96 h-96 bg-red-500/5 rounded-full blur-3xl animate-float"
+          style={{ animationDelay: "2s" }}
+        />
       </div>
 
       <div className="max-w-6xl mx-auto text-center relative z-10">
@@ -49,9 +52,9 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="font-syne text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-foreground leading-[1.1] mb-6"
         >
-          Creators that turn attention into
+          B2B Creator Partnerships That Drive
           <br />
-          <span className="text-blue-600">real results</span>
+          <span className="text-blue-600">Scalable Pipeline</span>
         </motion.h1>
 
         {/* Subheadline */}
@@ -61,7 +64,9 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="font-sans text-lg md:text-xl lg:text-2xl text-foreground/70 max-w-3xl mx-auto leading-relaxed mb-12"
         >
-          We connect AI SaaS brands with creators whose audiences already trust them, so you get real pipeline instead of just impressions.
+          Automate your influencer matching process and access highly-engaged
+          professional audiences at scale. Skip the guesswork and partner only
+          with verified thought leaders.
         </motion.p>
 
         {/* CTA Buttons */}
@@ -86,7 +91,6 @@ export default function Hero() {
             <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
           </button>
         </motion.div>
-
       </div>
     </section>
   );

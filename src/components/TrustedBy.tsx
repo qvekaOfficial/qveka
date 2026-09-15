@@ -45,10 +45,11 @@ export default function TrustedBy() {
             SaaS
           </h2>
           <p className="font-sans text-base md:text-xl text-foreground/60 leading-relaxed max-w-3xl">
-            Since the release of ChatGPT in late 2022, we were the first to
-            sponsor a creator on X. Today, we&apos;ve helped category leaders
-            and SaaS brands connect with influencers that drive conversions and
-            awareness to their products and services.
+            Since late 2022, we’ve been pioneering creator partnerships on X for
+            ambitious tech companies. We bridge the gap between
+            category-defining SaaS products and trusted industry voices—building
+            targeted sponsorship campaigns that don't just generate noise, but
+            deliver qualified leads and measurable growth.
           </p>
         </div>
 
@@ -84,7 +85,8 @@ export default function TrustedBy() {
                   key={index}
                   src={logo}
                   alt={`Partner logo ${index + 1}`}
-                  className="h-10 md:h-12 w-auto object-contain grayscale opacity-40 hover:grayscale-0 hover:opacity-100 hover:brightness-110 transition-all duration-500 shrink-0"
+                  // className="h-10 md:h-12 w-auto object-contain grayscale opacity-40 hover:grayscale-0 hover:opacity-100 hover:brightness-110 transition-all duration-500 shrink-0"
+                  className="h-10 md:h-12 w-auto object-contain grayscale-0 opacity-100 brightness-110 transition-all duration-500 shrink-0"
                 />
               ))}
             </div>
