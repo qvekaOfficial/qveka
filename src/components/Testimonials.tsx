@@ -6,7 +6,7 @@ const testimonials = [
   {
     name: "Alex Moore",
     quote:
-      "Made by Tribhuvan, linkedin: https://www.linkedin.com/in/tribhuvan-kumar/",
+      "QVEKA made it incredibly easy to find the right creators for our audience. We went from guessing who to partner with to running a repeatable creator pipeline.",
     handle: "@heyalexmoore",
     followers: "185K+ followers on X",
     image:
@@ -15,7 +15,7 @@ const testimonials = [
   {
     name: "Harish kumar",
     quote:
-      "Made by Tribhuvan, linkedin: https://www.linkedin.com/in/tribhuvan-kumar/",
+      "The quality of creators we discovered through QVEKA was a huge step up. We’re now able to reach highly relevant professional audiences without the usual outreach and vetting headache.",
     handle: "@harishkumar-sh",
     followers: "625K+ followers on Linkedin",
     image:
@@ -24,7 +24,7 @@ const testimonials = [
   {
     name: "Victoria Blake",
     quote:
-      "Made by Tribhuvan, linkedin: https://www.linkedin.com/in/tribhuvan-kumar/",
+      "What stood out was how quickly we could identify creators who actually matched our brand and audience. QVEKA turned creator partnerships into a much more structured growth channel.",
     handle: "@VictoriaBlddd",
     followers: "37K+ followers on X",
     image:
@@ -33,7 +33,7 @@ const testimonials = [
   {
     name: "Arfa Farheen",
     quote:
-      "Made by Tribhuvan, linkedin: https://www.linkedin.com/in/tribhuvan-kumar/",
+      "Instead of spending hours searching for and vetting creators, we can focus on building the partnerships. QVEKA gives us a much clearer path from creator discovery to meaningful business results.",
     handle: "@arfa-farheen",
     followers: "61K+ followers on Linkedin",
     image:
@@ -46,13 +46,13 @@ const testimonials = [
 }
 function TestimonialCard({ t }: { t: (typeof testimonials)[number] }) {
   return (
-    <article className="group relative flex w-[280px] shrink-0 flex-col overflow-hidden rounded-3xl border border-foreground/10 bg-white shadow-[0_10px_40px_-15px_rgba(30,58,138,0.25)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_25px_60px_-15px_rgba(220,38,38,0.35)] md:w-[420px] lg:w-[460px]">
+    <article className="group relative flex h-[460px] w-[280px] shrink-0 flex-col overflow-hidden rounded-3xl border border-foreground/10 bg-white shadow-[0_10px_40px_-15px_rgba(30,58,138,0.25)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_25px_60px_-15px_rgba(220,38,38,0.35)] md:h-[520px] md:w-[420px] lg:h-[560px] lg:w-[460px]">
       {/* Image */}
-      <div className="relative h-64 shrink-0 overflow-hidden md:h-82 lg:h-96">
+      <div className="relative h-48 shrink-0 overflow-hidden sm:h-52 md:h-56 lg:h-64">
         <img
           src={t.image}
           alt={t.name}
-          className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
+          className="h-full w-full object-cover transition-transform duration-700 object-top group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
       </div>
@@ -68,7 +68,7 @@ function TestimonialCard({ t }: { t: (typeof testimonials)[number] }) {
           {t.name}
         </h3>
 
-        <p className="mb-5 line-clamp-3 hidden flex-1 font-sans text-sm leading-relaxed text-foreground/70 md:text-base">
+        <p className="mb-5 line-clamp-3 flex-1 font-sans text-sm leading-relaxed text-foreground/70 md:text-base">
           {t.quote}
         </p>
 
