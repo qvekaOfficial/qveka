@@ -20,7 +20,14 @@ const logos = [
   "https://framerusercontent.com/images/mp8wDjNwy1mC3dL0QGk9JzuGsE.png",
 ];
 
-const marqueeLogos = [...logos, ...logos];
+const marqueeLogos = [
+  ...logos,
+  ...logos,
+  ...logos,
+  ...logos,
+  ...logos,
+  ...logos,
+];
 
 export default function TrustedBy() {
   return (
@@ -69,8 +76,14 @@ export default function TrustedBy() {
               }
             }
             .logo-marquee {
-              animation: marquee-scroll 30s linear infinite;
+              animation: marquee-scroll 5s linear infinite;
               will-change: transform;
+            }
+
+            @media (min-width: 768px) {
+              .logo-marquee {
+                animation-duration: 30s;
+              }
             }
           `}</style>
 
@@ -79,7 +92,7 @@ export default function TrustedBy() {
             <div className="absolute left-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-r from-blue-50/40 to-transparent z-10 pointer-events-none" />
             <div className="absolute right-0 top-0 bottom-0 w-24 md:w-48 bg-gradient-to-l from-blue-50/40 to-transparent z-10 pointer-events-none" />
 
-            <div className="flex items-center gap-20 md:gap-28 logo-marquee">
+            <div className="flex items-center gap-14 md:gap-28 logo-marquee">
               {marqueeLogos.map((logo, index) => (
                 <img
                   key={index}
