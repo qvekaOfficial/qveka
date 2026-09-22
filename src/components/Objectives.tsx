@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown } from "lucide-react";
 
 const objectives = [
   {
@@ -58,10 +59,12 @@ export default function Objectives() {
           </p>
         </div>
 
-        {/* Main layout: featured card + side thumbnails */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-6 lg:gap-8 items-start">
+        {/* Desktop layout (>= 1024px): featured card + side thumbnails.
+            The active item is promoted out of the rail here on purpose — with
+            two columns it reads as a selection, not as reordering. */}
+        <div className="hidden lg:grid lg:grid-cols-[1fr_320px] gap-8 items-start">
           {/* Featured large card */}
-          <div className="relative overflow-hidden rounded-2xl border border-foreground/5 min-h-[400px] lg:min-h-[520px]">
+          <div className="relative overflow-hidden rounded-2xl border border-foreground/5 min-h-[520px]">
             <AnimatePresence mode="wait">
               <motion.div
                 key={active}
@@ -158,6 +161,86 @@ export default function Objectives() {
               );
             })}
           </div>
+        </div>
+
+        {/* Mobile / tablet layout (< 1024px): accordion.
+            Renders every objective in fixed 01/02/03 order — no filtering, so a
+            tap never moves a card to the top; it just expands in place. */}
+        <div className="lg:hidden flex flex-col gap-4">
+          {objectives.map((obj, i) => {
+            const isOpen = active === i;
+            return (
+              <motion.div
+                key={obj.num}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
+              >
+                <button
+                  onClick={() => setActive(i)}
+                  aria-expanded={isOpen}
+                  className={`w-full text-left rounded-xl border backdrop-blur-sm p-5 md:p-6 transition-all duration-300 cursor-pointer ${
+                    isOpen
+                      ? "border-blue-600/20 bg-white"
+                      : "border-foreground/5 bg-white/60"
+                  }`}
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="min-w-0">
+                      <div className="font-syne text-3xl md:text-4xl font-bold text-blue-600/10 leading-none mb-2 select-none">
+                        {obj.num}
+                      </div>
+                      <h4
+                        className={`font-syne text-base md:text-lg font-bold leading-snug transition-colors duration-300 ${
+                          isOpen
+                            ? "text-blue-700"
+                            : "text-foreground line-clamp-2"
+                        }`}
+                      >
+                        {obj.heading}
+                      </h4>
+                    </div>
+
+                    <motion.div
+                      animate={{ rotate: isOpen ? 180 : 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="mt-1 shrink-0"
+                    >
+                      <ChevronDown className="h-5 w-5 text-blue-600" />
+                    </motion.div>
+                  </div>
+
+                  {/* Paragraph expands in place — CSS grid-rows collapse */}
+                  <div
+                    className={`grid overflow-hidden transition-all duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1)] ${
+                      isOpen
+                        ? "grid-rows-[1fr] opacity-100 mt-3"
+                        : "grid-rows-[0fr] opacity-0 mt-0"
+                    }`}
+                  >
+                    <div className="min-h-0">
+                      <p className="font-sans text-sm md:text-base text-foreground/60 leading-relaxed">
+                        {obj.paragraph}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Tags stay visible in both states */}
+                  <div className="flex flex-wrap gap-1.5 mt-3">
+                    {obj.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="border border-blue-600/15 text-blue-600/60 rounded-full px-2 py-0.5 text-[9px] font-mono uppercase tracking-[0.08em]"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </button>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

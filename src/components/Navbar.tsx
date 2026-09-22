@@ -11,6 +11,13 @@ const navLinks = [
   { label: "TESTIMONIALS", href: "#testimonials" },
 ];
 
+const navLinksForMobile = [
+  { label: "WORK", href: "#work" },
+  { label: "SERVICES", href: "#services" },
+  { label: "TESTIMONIALS", href: "#testimonials" },
+  { label: "CONTACT", href: "#contact" },
+];
+
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -123,7 +130,7 @@ export default function Navbar() {
         )}
       >
         <div className="flex flex-col gap-6">
-          {navLinks.map((link, index) => (
+          {navLinksForMobile.map((link, index) => (
             <a
               key={link.label}
               href={link.href}
