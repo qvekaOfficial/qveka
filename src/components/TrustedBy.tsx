@@ -2,22 +2,19 @@
 
 import { motion } from "framer-motion";
 
-// khusboo dont want these images to be used in the trusted by section, so commenting them out for now
-// "https://framerusercontent.com/images/sOvFV9n2zKVAA9VNV7us8DDYuHk.png",
-// "https://framerusercontent.com/images/DCAckiFnouuErEjA4ZLmaaKXamo.jpeg",
 const logos = [
+  "/leaders_logo_airwallex.jpeg",
+  "/leaders_logo_heygen.jpeg",
+  "/leaders_logo_higgsfield.jpeg",
+  "/leaders_logo_imagine_art.jpeg",
+  "/leaders_logo_invideo.jpeg",
+  "/leaders_logo_openai.jpeg",
   "/leaders_logo_apodex.jpeg",
   "/leaders_logo_luma_ai.jpeg",
   "/leaders_logo_outbox_lab.jpeg",
   "/leaders_logo_omneky.jpeg",
   "/leaders_logo_gamma.jpeg",
   "/leaders_logo_deepseek.jpeg",
-  "https://framerusercontent.com/images/Fmc5Fnp5nSpkl0yZGTS8MJD7Ugw.png",
-  "https://framerusercontent.com/images/9u4tniv1LQHOhcOJDRLegGiFZ48.jpg",
-  "https://framerusercontent.com/images/MGItyAxn4s2MsEyzc4aKCObtauI.png",
-  "https://framerusercontent.com/images/UpW5YLUQlGoa3rIFn16gROvh5J8.png",
-  "https://framerusercontent.com/images/neGqynuVHsCT7aOep5bQIoUMQ.jpeg",
-  "https://framerusercontent.com/images/mp8wDjNwy1mC3dL0QGk9JzuGsE.png",
 ];
 
 const marqueeLogos = [...logos, ...logos];
@@ -45,16 +42,13 @@ export default function TrustedBy() {
           </div>{" "}
           <h2 className="font-syne text-3xl md:text-5xl lg:text-6xl font-bold text-foreground leading-[1.1] mb-7">
             {" "}
-            <span className="text-blue-600">Product-Led</span> Marketing for AI
+            <span className="text-blue-600">Creator-Led</span> Growth for AI &
             SaaS{" "}
           </h2>{" "}
           <p className="font-sans text-base md:text-xl text-foreground/60 leading-relaxed max-w-3xl">
-            {" "}
-            Since late 2022, we’ve been pioneering creator partnerships on X for
-            ambitious tech companies. We bridge the gap between
-            category-defining SaaS products and trusted industry voices—building
-            targeted sponsorship campaigns that don't just generate noise, but
-            deliver qualified leads and measurable growth.{" "}
+            Qveka connects AI, SaaS and technology brands with high-reach
+            creators across X and LinkedIn to amplify product launches,
+            campaigns and announcements.
           </p>{" "}
         </div>{" "}
         {/* Trusted By Marquee */}{" "}
@@ -62,7 +56,7 @@ export default function TrustedBy() {
           {" "}
           <div className="font-mono text-sm md:text-base text-blue-900/30 mb-10 tracking-wide font-medium">
             {" "}
-            Trusted by industry leaders{" "}
+            Brands & campaigns we&apos;ve worked with{" "}
           </div>{" "}
           <style jsx global>{`
             @keyframes marquee-scroll {

@@ -8,7 +8,7 @@ const faqs = [
   {
     question: "WHICH PLATFORMS DO YOU GUYS WORK WITH?",
     answer:
-      "We work with X (formerly Twitter), LinkedIn, YouTube, short-form video on Instagram and TikTok, newsletters, podcasts, and more. Basically everywhere content is being made, we can put you and your brand in the discussion.",
+      "We work with X (formerly Twitter), LinkedIn, YouTube, short-form video on Instagram, newsletters, podcasts, and more. Basically everywhere content is being made, we can put you and your brand in the discussion.",
   },
   {
     question: "HOW DOES THE CREATOR APPROVAL PROCESS WORK?",

@@ -140,8 +140,10 @@ export default function Contact() {
             </h2>
 
             <p className="font-sans text-xl md:text-2xl text-foreground/70 leading-relaxed max-w-lg">
-              Let&apos;s build your army of brand ambassadors and turn your
-              product into a category leader.
+              Ready to put your product in front of the right audience?
+              <br />
+              Tell us what you're launching and we'll build a creator campaign
+              around it.
             </p>
           </motion.div>
 

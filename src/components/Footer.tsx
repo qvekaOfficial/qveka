@@ -64,12 +64,10 @@ export default function Footer() {
                 LinkedIn
               </a>
               <a
-                href="https://www.linkedin.com/in/tribhuvan-kumar/"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="mailto:collab@qveka.com"
                 className="font-syne text-sm md:text-base font-semibold text-background/60 hover:text-red-500 transition-colors tracking-tight"
               >
-                Twitter
+                Email
               </a>
             </div>
 

@@ -5,33 +5,33 @@ import { motion } from "framer-motion";
 const steps = [
   {
     num: "01",
-    title: "Discovery Call",
-    desc: "Set up a call and decide on the platform, goals, and attribution tracking.",
+    title: "Share Your Goal",
+    desc: "Tell us what you're launching, who you want to reach, and what you want to achieve.",
   },
   {
     num: "02",
-    title: "Creator Approval",
-    desc: "Approving the creators with you to ensure the right fit for your brand and audience.",
+    title: "Get Your Creator Shortlist",
+    desc: "We curate relevant creators from our network based on your audience, niche, and campaign goals.",
   },
   {
     num: "03",
-    title: "Creative Brief",
-    desc: "Creating a brief that will excite creators and give them all the information they need.",
+    title: "Approve Your Creators",
+    desc: "Review the shortlist and select the creators that best fit your brand and campaign.",
   },
   {
     num: "04",
-    title: "Outreach & Negotiation",
-    desc: "Reaching out to creators to approve pricing, creatives, and posting dates.",
+    title: "We Manage Everything",
+    desc: "From outreach and negotiation to content approvals and scheduling, our team handles the execution.",
   },
   {
     num: "05",
-    title: "Go Live",
-    desc: "Publish the post at an agreed time across your chosen platforms.",
+    title: "Campaign Goes Live",
+    desc: "Your approved content goes live across the selected creators and platforms at the right time.",
   },
   {
     num: "06",
-    title: "Performance Report",
-    desc: "Provide a detailed report including all the posts that were made, their impressions, positive comment sentiment, clicks, and conversions (if accessible).",
+    title: "Measure the Results",
+    desc: "Track your campaign performance with clear reporting on reach, impressions, engagement, and more.",
   },
 ];
 

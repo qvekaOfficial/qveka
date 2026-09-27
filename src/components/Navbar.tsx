@@ -1,18 +1,20 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { label: "WORK", href: "#work" },
+  { label: "WORK", href: "/work" },
   { label: "SERVICES", href: "#services" },
   { label: "ABOUT", href: "#about" },
   { label: "TESTIMONIALS", href: "#testimonials" },
 ];
 
 const navLinksForMobile = [
-  { label: "WORK", href: "#work" },
+  { label: "WORK", href: "/work" },
   { label: "SERVICES", href: "#services" },
   { label: "TESTIMONIALS", href: "#testimonials" },
   { label: "CONTACT", href: "#contact" },
@@ -21,6 +23,8 @@ const navLinksForMobile = [
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,8 +54,18 @@ export default function Navbar() {
   }, [isMobileMenuOpen]);
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    // Page routes (e.g. /work) — let Next.js handle navigation
+    if (href.startsWith("/")) {
+      setIsMobileMenuOpen(false);
+      return;
+    }
     e.preventDefault();
     setIsMobileMenuOpen(false);
+    // Anchor on another page — go back home first
+    if (pathname !== "/") {
+      router.push(`/${href}`);
+      return;
+    }
     const element = document.querySelector(href);
     if (element) {
       const topOffset = 80; // height of navbar
@@ -75,35 +89,54 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Logo */}
-        <a
-          href="#hero"
-          onClick={(e) => handleLinkClick(e, "#hero")}
-          className="font-syne text-2xl font-bold tracking-tight text-foreground transition-opacity hover:opacity-80"
-        >
-          QVEKA<span className="text-secondary font-mono">.</span>
-        </a>
+        {pathname === "/" ? (
+          <a
+            href="#hero"
+            onClick={(e) => handleLinkClick(e, "#hero")}
+            className="font-syne text-2xl font-bold tracking-tight text-foreground transition-opacity hover:opacity-80"
+          >
+            QVEKA<span className="text-secondary font-mono">.</span>
+          </a>
+        ) : (
+          <Link
+            href="/"
+            className="font-syne text-2xl font-bold tracking-tight text-foreground transition-opacity hover:opacity-80"
+          >
+            QVEKA<span className="text-secondary font-mono">.</span>
+          </Link>
+        )}
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-10">
           <div className="flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                onClick={(e) => handleLinkClick(e, link.href)}
-                className="font-sans text-sm font-medium text-foreground/80 hover:text-foreground transition-colors duration-200"
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) =>
+              link.href.startsWith("/") ? (
+                <Link
+                  key={link.label}
+                  href={link.href}
+                  className="font-sans text-sm font-medium text-foreground/80 hover:text-foreground transition-colors duration-200"
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  onClick={(e) => handleLinkClick(e, link.href)}
+                  className="font-sans text-sm font-medium text-foreground/80 hover:text-foreground transition-colors duration-200"
+                >
+                  {link.label}
+                </a>
+              )
+            )}
           </div>
 
           <a
             href="#contact"
             onClick={(e) => handleLinkClick(e, "#contact")}
-            className="group inline-flex items-center gap-1.5 bg-foreground text-background px-5 py-2.5 rounded-full text-xs font-mono font-medium hover:bg-foreground/90 transition-all duration-300"
+            className="group inline-flex items-center gap-1.5 bg-foreground text-background px-5 py-2.5 rounded-full text-xs font-mono font-medium hover:bg-foreground/90 uppercase transition-all duration-300"
           >
-            GET IN TOUCH
+            Start a campaign
             <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
         </div>
@@ -130,28 +163,42 @@ export default function Navbar() {
         )}
       >
         <div className="flex flex-col gap-6">
-          {navLinksForMobile.map((link, index) => (
-            <a
-              key={link.label}
-              href={link.href}
-              onClick={(e) => handleLinkClick(e, link.href)}
-              className="font-syne text-3xl font-semibold text-foreground hover:text-primary transition-colors flex items-center justify-between group"
-            >
-              <span>{link.label}</span>
-              <span className="font-mono text-sm text-foreground/45 group-hover:text-primary">
-                0{index + 1}
-              </span>
-            </a>
-          ))}
+          {navLinksForMobile.map((link, index) =>
+            link.href.startsWith("/") ? (
+              <Link
+                key={link.label}
+                href={link.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="font-syne text-3xl font-semibold text-foreground hover:text-primary transition-colors flex items-center justify-between group"
+              >
+                <span>{link.label}</span>
+                <span className="font-mono text-sm text-foreground/45 group-hover:text-primary">
+                  0{index + 1}
+                </span>
+              </Link>
+            ) : (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={(e) => handleLinkClick(e, link.href)}
+                className="font-syne text-3xl font-semibold text-foreground hover:text-primary transition-colors flex items-center justify-between group"
+              >
+                <span>{link.label}</span>
+                <span className="font-mono text-sm text-foreground/45 group-hover:text-primary">
+                  0{index + 1}
+                </span>
+              </a>
+            )
+          )}
         </div>
 
         <div className="flex flex-col gap-6">
           <a
             href="#contact"
             onClick={(e) => handleLinkClick(e, "#contact")}
-            className="group flex items-center justify-center gap-2 bg-foreground text-background px-6 py-4 rounded-full text-sm font-mono font-medium hover:bg-foreground/90 transition-colors border border-transparent text-center"
+            className="group flex items-center justify-center gap-2 bg-foreground text-background px-6 py-4 rounded-full text-sm font-mono font-medium hover:bg-foreground/90 uppercase transition-colors border border-transparent text-center"
           >
-            GET IN TOUCH
+            Start a campaign
             <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
           <div className="text-center font-mono text-xs text-foreground/45">

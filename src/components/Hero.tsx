@@ -1,6 +1,7 @@
 "use client";
 
-import { ArrowRight, Sparkles } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 
 export default function Hero() {
@@ -80,16 +81,16 @@ export default function Hero() {
             onClick={() => handleScroll("#contact")}
             className="group inline-flex items-center gap-2 bg-foreground text-background px-8 py-4 rounded-full font-sans font-medium hover:bg-foreground/90 transition-all duration-300 shadow-lg hover:shadow-xl"
           >
-            Get In Touch
+            Start a campaign
             <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
           </button>
-          <button
-            onClick={() => handleScroll("#services")}
+          <Link
+            href="/work"
             className="group inline-flex items-center gap-2 bg-transparent text-foreground border-2 border-foreground/20 px-8 py-4 rounded-full font-sans font-medium hover:border-foreground/40 hover:bg-foreground/5 transition-all duration-300"
           >
-            Our Services
+            View work
             <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-          </button>
+          </Link>
         </motion.div>
       </div>
     </section>
