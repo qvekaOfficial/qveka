@@ -1,21 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-
-const logos = [
-  "/leaders_logo_airwallex.jpeg",
-  "/leaders_logo_heygen.jpeg",
-  "/leaders_logo_higgsfield.jpeg",
-  "/leaders_logo_imagine_art.jpeg",
-  "/leaders_logo_invideo.jpeg",
-  "/leaders_logo_openai.jpeg",
-  "/leaders_logo_apodex.jpeg",
-  "/leaders_logo_luma_ai.jpeg",
-  "/leaders_logo_outbox_lab.jpeg",
-  "/leaders_logo_omneky.jpeg",
-  "/leaders_logo_gamma.jpeg",
-  "/leaders_logo_deepseek.jpeg",
-];
+import { logoUrls as logos } from "@/lib/cloudinary-assets";
 
 const marqueeLogos = [...logos, ...logos];
 
@@ -112,6 +98,8 @@ export default function TrustedBy() {
                     key={`logo-1-${index}`}
                     src={logo}
                     alt={`Partner logo ${index + 1}`}
+                    loading="lazy"
+                    decoding="async"
                     className="h-10 md:h-12 w-auto object-contain shrink-0 grayscale-0 opacity-100 brightness-110 transition-all duration-500"
                   />
                 ))}{" "}
@@ -124,6 +112,8 @@ export default function TrustedBy() {
                     key={`logo-2-${index}`}
                     src={logo}
                     alt={`Partner logo ${index + 1}`}
+                    loading="lazy"
+                    decoding="async"
                     className="h-10 md:h-12 w-auto object-contain shrink-0 grayscale-0 opacity-100 brightness-110 transition-all duration-500"
                   />
                 ))}{" "}

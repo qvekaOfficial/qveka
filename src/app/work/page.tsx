@@ -10,6 +10,10 @@ export const metadata: Metadata = {
     "Creator-led launches and campaigns amplified by Qveka across X and LinkedIn. Browse real posts with engagement.",
 };
 
+// Static index over local data: prerendered once, cached at CDN.
+export const dynamic = "force-static";
+export const revalidate = false;
+
 export default function WorkPage() {
   const totalLikes = workPosts.reduce((s, p) => s + p.likes, 0);
   const totalReposts = workPosts.reduce((s, p) => s + p.reposts, 0);

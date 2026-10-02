@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { serviceUrls } from "@/lib/cloudinary-assets";
 
 const services = [
   {
@@ -15,7 +16,7 @@ const services = [
       "CREATOR-LED GROWTH",
       "INFLUENCER ROI TRACKING",
     ],
-    image: "/services_1_Complete_A_Z_influencer_marketing.jpeg",
+    image: serviceUrls.completeAZ,
   },
   {
     num: "02",
@@ -29,8 +30,7 @@ const services = [
       "LINKEDIN LAUNCH STRATEGY",
       "GO-TO-MARKET SOCIAL",
     ],
-    image:
-      "/services_2_Launches_on_X_and_LinkedIn.jpeg",
+    image: serviceUrls.launchesXLinkedIn,
   },
   {
     num: "03",
@@ -44,8 +44,7 @@ const services = [
       "CREATOR TALENT AGENCY",
       "B2B CREATOR MATCHING",
     ],
-    image:
-      "/services_3_Curated_creator_talent_headhunting.jpeg",
+    image: serviceUrls.headhunting,
   },
 ];
 
@@ -107,6 +106,8 @@ export default function OurServices() {
                   <motion.img
                     src={service.image}
                     alt={service.subsection}
+                    loading="lazy"
+                    decoding="async"
                     initial={{ opacity: 0, scale: 1.05 }}
                     animate={{ opacity: 1, scale: 1 }}
                     whileHover={{ scale: 1 }}

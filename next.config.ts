@@ -1,18 +1,13 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  /* Zero-cost static: never invoke the Image Optimization API.
+     All media is plain <img>/<video> served by Cloudinary (see
+     src/lib/cloudinary-assets.ts), so `unoptimized` is a fail-safe —
+     even an accidental `next/image` import serves src as-is with
+     no `/_next/image` requests. */
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'framerusercontent.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'pbs.twimg.com',
-      },
-    ],
+    unoptimized: true,
   },
 };
 

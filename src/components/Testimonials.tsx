@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { cloudinaryTestimonials } from "@/lib/cloudinary-assets";
 
 const testimonials = [
   {
@@ -9,8 +10,7 @@ const testimonials = [
       "QVEKA made it incredibly easy to find the right creators for our audience. We went from guessing who to partner with to running a repeatable creator pipeline.",
     handle: "@heyalexmoore",
     followers: "185K+ followers on X",
-    image:
-      "https://pbs.twimg.com/profile_images/2002782930415026177/AQXbO75J_400x400.jpg",
+    image: cloudinaryTestimonials.alexMoore,
   },
   {
     name: "Harish kumar",
@@ -18,8 +18,7 @@ const testimonials = [
       "The quality of creators we discovered through QVEKA was a huge step up. We’re now able to reach highly relevant professional audiences without the usual outreach and vetting headache.",
     handle: "@harishkumar-sh",
     followers: "625K+ followers on Linkedin",
-    image:
-      "https://media.licdn.com/dms/image/v2/D5603AQEoh5QMuZwhYA/profile-displayphoto-crop_800_800/B56Z.LC37aGcAI-/0/1784744216295?e=1790812800&v=beta&t=_aIDcmiTPd9orONSOj69DfM9Lv7LTRUz00dKlTYkrSY",
+    image: cloudinaryTestimonials.harishKumar,
   },
   {
     name: "Victoria Blake",
@@ -27,8 +26,7 @@ const testimonials = [
       "What stood out was how quickly we could identify creators who actually matched our brand and audience. QVEKA turned creator partnerships into a much more structured growth channel.",
     handle: "@VictoriaBlddd",
     followers: "37K+ followers on X",
-    image:
-      "https://pbs.twimg.com/profile_images/2060717043109036032/p0o1woou_400x400.jpg",
+    image: cloudinaryTestimonials.victoriaBlake,
   },
   {
     name: "Arfa Farheen",
@@ -36,8 +34,7 @@ const testimonials = [
       "Instead of spending hours searching for and vetting creators, we can focus on building the partnerships. QVEKA gives us a much clearer path from creator discovery to meaningful business results.",
     handle: "@arfa-farheen",
     followers: "61K+ followers on Linkedin",
-    image:
-      "https://media.licdn.com/dms/image/v2/D4D03AQHtxi2_fm__tg/profile-displayphoto-scale_200_200/B4DZ5U107lHoAc-/0/1779539860633?e=1790812800&v=beta&t=GkjCkgwOtd0gzPSc-b6PG-3-Ct6j1x4H43yffaIW1og",
+    image: cloudinaryTestimonials.arfaFarheen,
   },
 ];
 
@@ -52,6 +49,8 @@ function TestimonialCard({ t }: { t: (typeof testimonials)[number] }) {
         <img
           src={t.image}
           alt={t.name}
+          loading="lazy"
+          decoding="async"
           className="h-full w-full object-cover transition-transform duration-700 object-top group-hover:scale-110"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />

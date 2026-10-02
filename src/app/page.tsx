@@ -13,6 +13,12 @@ import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
+// Purely static marketing page: prerendered once at build, served from
+// CDN with `s-maxage=31536000` (Next default). 500 visitors = 0 function
+// invocations. Contact form POSTs to /api/contact only on submit.
+export const dynamic = "force-static";
+export const revalidate = false;
+
 export default function Home() {
   return (
     <main className="min-h-screen flex flex-col">

@@ -8,8 +8,9 @@ export default async function ProtectedAdminLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // The authoritative auth check. proxy.ts only does a cookie-presence
-  // redirect; this is what actually verifies the session.
+  // Authoritative auth check: verifies the session cookie server-side.
+  // No proxy.ts — public pages never trigger server code, and /admin
+  // renders dynamically only when you visit it.
   const user = await getSessionUser();
   if (!user) redirect("/admin/login");
 

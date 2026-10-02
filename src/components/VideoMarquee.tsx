@@ -1,15 +1,6 @@
 "use client";
 
-const videos = [
-  "https://framerusercontent.com/assets/yxbKfqdkCsxSfhxuQ5RQn3iMtB0.mp4",
-  "https://framerusercontent.com/assets/usbtrQ1dyvyquVYEYcXdq2u3bmQ.mp4",
-  "https://framerusercontent.com/assets/9OGE1PZN2XKC7tcJE3hlXeAd4M.mp4",
-  "https://framerusercontent.com/assets/jQsB3PkZw96s0EUiMaeYHAzDpak.mp4",
-  "https://framerusercontent.com/assets/teUH5Ixd9fD6YdMLmSYLxdp92Q.mp4",
-  "https://framerusercontent.com/assets/lNCpgbSwYRucWZrtdHbgdsBsUWw.mp4",
-  "https://framerusercontent.com/assets/1jQmGscoImrS6owHtbkJOefkPnQ.mp4",
-  "https://framerusercontent.com/assets/DK6KsZNwo4IrqCyhipdq3g4.mp4",
-];
+import { videoUrls as videos } from "@/lib/cloudinary-assets";
 
 export default function VideoMarquee() {
   // Double the videos for seamless loop
@@ -47,6 +38,7 @@ export default function VideoMarquee() {
                   loop
                   muted
                   playsInline
+                  preload="metadata"
                   className="w-full h-full object-cover"
                 />
               </div>

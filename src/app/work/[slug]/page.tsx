@@ -15,6 +15,12 @@ import Footer from "@/components/Footer";
 import WorkCard from "@/components/WorkCard";
 import { workPosts, getWorkPost, formatCount } from "@/data/work";
 
+// All slugs prerendered at build; unknown slugs 404 without a server
+// render, so browsing work never triggers a function invocation.
+export const dynamic = "force-static";
+export const revalidate = false;
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   return workPosts.map((p) => ({ slug: p.slug }));
 }
