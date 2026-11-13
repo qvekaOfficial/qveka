@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Syne, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { siteUrl } from "@/lib/site";
 
 const syne = Syne({
   subsets: ["latin"],
@@ -22,15 +23,6 @@ const jetbrains = JetBrains_Mono({
   display: "swap",
   weight: ["300", "400", "500"],
 });
-
-// Absolute site URL is required so social crawlers (LinkedIn, X, Slack)
-// can resolve og:image. Set SITE_URL in Vercel; falls back to the
-// production hostname Vercel injects automatically.
-const siteUrl = process.env.SITE_URL
-  ? process.env.SITE_URL
-  : process.env.VERCEL_PROJECT_PRODUCTION_URL
-    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    : "http://localhost:3000";
 
 const siteTitle = "Qveka — Agency for Promotion, Brand & Build";
 const siteDescription =
