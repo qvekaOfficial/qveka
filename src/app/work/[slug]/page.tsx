@@ -39,8 +39,25 @@ export async function generateMetadata({
     openGraph: {
       title: post.title,
       description: post.text.slice(0, 200),
+      url: `/work/${slug}`,
+      siteName: "Qveka",
       type: "article",
+      images: [
+        {
+          url: "/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
     },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.text.slice(0, 200),
+      images: ["/og-image.png"],
+    },
+    alternates: { canonical: `/work/${slug}` },
   };
 }
 
